@@ -1,0 +1,361 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    color-scheme: dark;
+    --background: #141613;
+    --text: #f0f0e7;
+    --muted: #a4a89e;
+    --accent: #e6f58a;
+    --border: #363b30;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image: radial-gradient(#89947420 1px, transparent 1px);
+    background-size: 24px 24px;
+    content: "";
+    pointer-events: none;
+}
+
+.page {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 64px;
+}
+
+.masthead, footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    font: 10px/1.6 "Courier New", monospace;
+    letter-spacing: 1.4px;
+}
+
+.masthead {
+    min-height: 104px;
+    border-bottom: 1px solid var(--border);
+}
+
+.wordmark {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1.6px;
+}
+
+.brand-mark {
+    display: grid;
+    width: 25px;
+    height: 25px;
+    place-items: center;
+    background: var(--accent);
+    color: var(--background);
+    font: bold 20px/1 Arial, sans-serif;
+}
+
+.edition, footer {
+    color: var(--muted);
+}
+
+.warning {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    align-items: center;
+    gap: 80px;
+    padding: 85px 0 76px;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 28px;
+    color: var(--accent);
+    font: 10px/1.6 "Courier New", monospace;
+    letter-spacing: 1.3px;
+}
+
+.eyebrow span, .status-dot {
+    width: 6px;
+    height: 6px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+h1 {
+    max-width: 660px;
+    margin: 0;
+    font-size: clamp(44px, 5.2vw, 68px);
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: -3px;
+}
+
+.rule-number {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--muted);
+}
+
+.highlight {
+    color: var(--accent);
+}
+
+.intro {
+    margin: 28px 0 17px;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.explanation {
+    max-width: 430px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.home-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+    padding: 15px 20px;
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: var(--background);
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 150ms, color 150ms;
+}
+
+.home-link:hover {
+    background: transparent;
+    color: var(--accent);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--text);
+    outline-offset: 6px;
+}
+
+.home-link span {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.scan-card {
+    position: relative;
+    padding: 24px;
+    border: 1px solid #49513c;
+    background: #1c2019;
+    box-shadow: 12px 12px 0 #0e100d;
+    transform: rotate(3deg);
+}
+
+.card-heading, .card-caption, .card-note {
+    font-family: "Courier New", monospace;
+}
+
+.card-heading {
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+.card-heading span:last-child {
+    color: var(--accent);
+}
+
+.code-stage {
+    position: relative;
+    margin: 24px 0;
+    padding: 24px;
+    background: #dce1cd;
+    color: #242a1c;
+}
+
+.code-art {
+    display: block;
+    width: 100%;
+    opacity: 0.75;
+}
+
+.scan-line {
+    position: absolute;
+    top: 48%;
+    left: -9px;
+    right: -9px;
+    height: 2px;
+    background: var(--accent);
+    box-shadow: 0 0 22px 5px #d8ee7c88;
+}
+
+.alert-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: grid;
+    width: 84px;
+    height: 84px;
+    place-items: center;
+    border: 5px solid #1c2019;
+    background: var(--accent);
+    transform: translate(-50%, -50%) rotate(-3deg);
+}
+
+.alert-badge svg {
+    width: 50px;
+    height: 50px;
+}
+
+.card-caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.card-note {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 10px;
+    text-align: center;
+}
+
+.checklist {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    padding: 30px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.check {
+    display: flex;
+    gap: 15px;
+}
+
+.step {
+    padding-top: 2px;
+    color: var(--accent);
+    font: 11px/1.6 "Courier New", monospace;
+}
+
+.check h2 {
+    margin: 0 0 8px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.check p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+footer {
+    padding: 25px 0;
+    font-size: 9px;
+}
+
+footer span:last-child {
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0;
+}
+
+@media (min-width: 1600px) {
+    .warning {
+        padding-top: 120px;
+        padding-bottom: 110px;
+    }
+}
+
+@media (max-width: 950px) {
+    .page {
+        padding: 0 32px;
+    }
+
+    .warning {
+        grid-template-columns: minmax(0, 1fr) 280px;
+        gap: 36px;
+        padding: 65px 0;
+    }
+
+    .edition {
+        display: none;
+    }
+
+    h1 {
+        letter-spacing: -2px;
+    }
+}
+
+@media (max-width: 650px) {
+    .page {
+        padding: 0 24px;
+    }
+
+    .masthead {
+        min-height: 80px;
+    }
+
+    .warning {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        padding: 45px 0;
+    }
+
+    .eyebrow {
+        font-size: 9px;
+        letter-spacing: 0.7px;
+    }
+
+    h1 {
+        max-width: 450px;
+        font-size: clamp(40px, 10.5vw, 60px);
+    }
+
+    .scan-card {
+        width: min(100% - 12px, 310px);
+        justify-self: center;
+    }
+
+    .checklist {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+
+    footer {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+        letter-spacing: 1px;
+    }
+}
